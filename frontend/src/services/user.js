@@ -30,8 +30,8 @@ export async function fetchUser(dispatch, getState) {
 export function updateUser(updatedData) {
 
   return async (dispatch, getState) => {
-    const user = selectUser(getState());
-    if (user.status === 'pending' || user.status === 'updating') {
+  const status = selectUser(getState()).status;
+    if (status === 'pending' || status === 'updating') {
       return;
     }
     dispatch(fetching())

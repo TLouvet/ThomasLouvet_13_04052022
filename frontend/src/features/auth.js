@@ -31,10 +31,10 @@ const { actions, reducer } = createSlice({
         return;
       }
     },
-    rejected: (draft) => {
+    rejected: (draft, action) => {
       if (draft.status === "pending") {
         draft.status = "rejected";
-        draft.error = "Rejected";
+        draft.error = action.payload;
         return;
       }
     }

@@ -5,8 +5,8 @@ import { fetching, resolved, rejected } from "../features/auth";
 export function loginUser(updatedData) {
 
   return async (dispatch, getState) => {
-    const auth = selectAuth(getState());
-    if (auth.status === "pending") {
+    const status = selectAuth(getState()).status;
+    if (status === "pending") {
       return;
     }
     dispatch(fetching());
@@ -25,10 +25,10 @@ export function loginUser(updatedData) {
         dispatch(setConnectionState(true));
         updatedData.rememberMe ? localStorage.setItem("token", data.body.token) : sessionStorage.setItem('token', data.body.token);
       } else {
-        dispatch(rejected());
+        dispatch(rejected(data.body));
       }
     } catch (error) {
-      dispatch(rejected());
+      dispatch(rejected(error));
     }
   }
 }

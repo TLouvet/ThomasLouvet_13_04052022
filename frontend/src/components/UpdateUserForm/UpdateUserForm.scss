@@ -1,0 +1,23 @@
+.user-update {
+
+  &-input {
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 0 10px 10px 0;
+    font-size: 16px;
+  }
+
+  &-btn {
+    padding: 3px 30px;
+    border: 1px solid #951695;
+    background-color: white;
+    margin: 0 10px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #7d73f6;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

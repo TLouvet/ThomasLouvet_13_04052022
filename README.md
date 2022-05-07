@@ -1,6 +1,6 @@
 <h1> Argent Bank </h1>
 
-Clôner le projet depuis Github.
+Clôner le projet depuis Github avec <code> git clone https://github.com/TLouvet/ThomasLouvet_13_04052022 </code>
 
 Pour lancer le projet:
 

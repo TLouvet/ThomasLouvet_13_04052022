@@ -20,7 +20,7 @@ export const AuthenticationPage = () => {
 
   // Check if user is already connected -- then a redirection should happen
   useEffect(() => {
-    if (localStorage.getItem("token") || isConnected) {
+    if (localStorage.getItem("token") || sessionStorage.getItem("token") || isConnected) {
       navigate('/profile');
     }
   }, [dispatch, navigate, isConnected])

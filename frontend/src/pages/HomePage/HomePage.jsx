@@ -13,7 +13,7 @@ export const HomePage = () => {
 
   // Upon arrival, check if user remains connected via token presence
   useEffect(() => {
-    if (!user.data && localStorage.getItem("token")) {
+    if (!user.data && (localStorage.getItem("token") || sessionStorage.getItem('token'))) {
       dispatch(fetchUser);
     }
   }, [user, dispatch])

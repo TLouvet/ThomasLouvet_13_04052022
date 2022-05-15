@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from '../../services/user';
+import { selectUser } from '../../utils/selector';
 
 export const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const userData = useSelector((store) => store.user.data);
-  const isConnected = Boolean(userData);
+  const { data, isConnected } = useSelector(selectUser);
   const signOption = isConnected ? "Sign out" : "Sign in";
 
   const handleClick = () => {
@@ -38,7 +38,7 @@ export const Header = () => {
           <FontAwesomeIcon icon={faUserCircle} />
           {isConnected &&
             <Link className="main-nav-item" to="/profile">
-              {userData?.firstName}
+              {data?.firstName}
             </Link>
           }
           <button className="main-nav-item" onClick={handleClick}>

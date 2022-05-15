@@ -27,10 +27,13 @@ export async function fetchUser(dispatch, getState) {
   }
 }
 
+/**
+ * @param {{firstName: string, lastName: string}} updatedData 
+ */
 export function updateUser(updatedData) {
 
   return async (dispatch, getState) => {
-  const status = selectUser(getState()).status;
+    const status = selectUser(getState()).status;
     if (status === 'pending' || status === 'updating') {
       return;
     }

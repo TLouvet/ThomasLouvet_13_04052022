@@ -51,6 +51,7 @@ const { actions, reducer } = createSlice({
     },
     setConnectionState: (draft, action) => {
       draft.isConnected = action.payload;
+      return;
     },
     toggleEdit: (draft) => {
       draft.isEditingName = !draft.isEditingName;
@@ -66,6 +67,7 @@ const { actions, reducer } = createSlice({
       draft.error = null;
       draft.isEditingName = false;
       draft.isConnected = false;
+      return;
     }
   }
 })

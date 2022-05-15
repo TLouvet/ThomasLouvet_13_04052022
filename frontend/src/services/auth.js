@@ -2,6 +2,9 @@ import { selectAuth } from "../utils/selector";
 import { setConnectionState } from "../features/user";
 import { fetching, resolved, rejected } from "../features/auth";
 
+/**
+ * @param {{email: string, password:string, rememberMe: boolean}} updatedData 
+ */
 export function loginUser(updatedData) {
 
   return async (dispatch, getState) => {

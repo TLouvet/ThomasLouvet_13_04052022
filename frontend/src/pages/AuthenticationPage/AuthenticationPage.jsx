@@ -23,7 +23,7 @@ export const AuthenticationPage = () => {
     if (localStorage.getItem("token") || sessionStorage.getItem("token") || isConnected) {
       navigate('/profile');
     }
-  }, [dispatch, navigate, isConnected])
+  }, [navigate, isConnected])
 
   return (
     <main className="bg-dark" >
